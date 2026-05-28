@@ -38,3 +38,8 @@ graph TD
 - Add Redis cache for repeated identical audits
 - Rate limit by IP at the edge
 - Neon scales automatically; no changes needed there
+
+## Known Limitations
+
+- Transactional email (Resend) not implemented — requires a server-side API route to avoid exposing the API key in the browser bundle. Would be a 2-hour addition with a Vercel serverless function.
+- Audit share URLs load from sessionStorage — works for same-browser sharing. Full cross-device sharing requires loading audit data from Neon by ID on the Result page.
