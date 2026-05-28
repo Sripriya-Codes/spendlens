@@ -20,6 +20,9 @@ const EMPTY_ENTRY = (): ToolEntry => ({
   monthlySpend: 0,
 });
 
+type ToolsType = typeof TOOLS;
+type ToolKey = keyof ToolsType;
+
 export default function SpendForm({ onSubmit, loading }: Props) {
   const [entries, setEntries] = useState<ToolEntry[]>([EMPTY_ENTRY()]);
 
@@ -27,7 +30,8 @@ export default function SpendForm({ onSubmit, loading }: Props) {
     setEntries((prev) => {
       const updated = [...prev];
       if (field === "toolId") {
-        const firstPlan = Object.keys(TOOLS[value as string].plans)[0];
+        const toolKey = value as ToolKey;
+        const firstPlan = Object.keys(TOOLS[toolKey].plans)[0];
         updated[index] = { ...updated[index], toolId: value as string, planId: firstPlan, monthlySpend: 0 };
       } else if (field === "planId") {
         updated[index] = { ...updated[index], planId: value as string };
@@ -49,17 +53,15 @@ export default function SpendForm({ onSubmit, loading }: Props) {
   return (
     <div className="space-y-4">
       {entries.map((entry, index) => {
-        const tool = TOOLS[entry.toolId];
+        const toolKey = entry.toolId as ToolKey;
+        const tool = TOOLS[toolKey];
         const plans = tool?.plans || {};
         return (
           <div key={index} className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
             <div className="flex justify-between items-center mb-4">
               <span className="text-sm font-semibold text-gray-500">Tool {index + 1}</span>
               {entries.length > 1 && (
-                <button
-                  onClick={() => removeTool(index)}
-                  className="text-red-400 hover:text-red-600 text-sm"
-                >
+                <button onClick={() => removeTool(index)} className="text-red-400 hover:text-red-600 text-sm">
                   Remove
                 </button>
               )}
@@ -84,8 +86,8 @@ export default function SpendForm({ onSubmit, loading }: Props) {
                   onChange={(e) => updateEntry(index, "planId", e.target.value)}
                   className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
                 >
-                  {Object.entries(plans).map(([id, p]: [string, any]) => (
-                    <option key={id} value={id}>{p.name}</option>
+                  {Object.entries(plans).map(([id, p]) => (
+                    <option key={id} value={id}>{(p as any).name}</option>
                   ))}
                 </select>
               </div>
