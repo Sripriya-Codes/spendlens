@@ -8,7 +8,7 @@ export async function saveAudit(id: string, auditData: any, email?: string, comp
     const match = neonUrl.match(/postgresql:\/\/([^:]+):([^@]+)@([^/]+)\/(.+)/);
     if (!match) return false;
 
-    const [, user, password, host, db] = match;
+    const [, user, password, host] = match;
     const endpoint = `https://${host}/sql`;
 
     const res = await fetch(endpoint, {
