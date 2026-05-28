@@ -1,4 +1,4 @@
-# SpendLens — Free AI Spend Audit Tool
+# SpendLens - Free AI Spend Audit Tool
 
 SpendLens helps startup founders and engineering managers find out if they're overpaying for AI tools like Cursor, Claude, ChatGPT, and GitHub Copilot. Input your subscriptions, get an instant audit with savings recommendations and an AI-generated summary. No login required.
 
