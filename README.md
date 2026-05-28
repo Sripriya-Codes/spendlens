@@ -6,6 +6,12 @@ SpendLens helps startup founders and engineering managers find out if they're ov
 
 ## Screenshots
 
+![Homepage](screenshots/homepage.png)
+![Form filled](screenshots/form-filled.png)
+![Audit result](screenshots/result.png)
+![Send copy](screenshots/copy-to-email.png)
+![Result scrolled](screenshots/result-scroll.png)
+
 ## Quick Start
 
 ```bash
