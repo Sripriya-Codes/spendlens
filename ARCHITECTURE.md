@@ -29,12 +29,12 @@ graph TD
 - **TypeScript** - catches bugs at compile time, preferred by assignment
 - **Tailwind CSS v3** - utility-first, no design system overhead
 - **Groq (llama-3.3-70b)** - fast, free tier, good quality for short summaries
-- **Neon Postgres** - serverless Postgres, free tier, no connection pool needed
+- **Neon Postgres** - serverless Postgres, free tier
 - **Vercel** - zero config deploy, environment variable support
 
 ## Scaling to 10k audits/day
 
-- Move audit save from client-side fetch to a Vercel Edge Function — keeps DB credentials server-side
+- Move audit save from client-side fetch to a Vercel Edge Function - keeps DB credentials server-side
 - Add Redis cache for repeated identical audits
 - Rate limit by IP at the edge
 - Neon scales automatically; no changes needed there
