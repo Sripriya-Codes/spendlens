@@ -8,7 +8,7 @@ SpendLens helps startup founders and engineering managers find out if they're ov
 
 ![Homepage](screenshots/homepage.png)
 ![Form filled](screenshots/form-filled.png)
-![Audit result](screenshots/result.png)
+![Audit result](screenshots/audit-result.png)
 ![Send copy](screenshots/copy-to-email.png)
 ![Result scrolled](screenshots/result-scroll.png)
 
