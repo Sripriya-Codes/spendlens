@@ -29,6 +29,7 @@ export default function Result() {
   async function fetchSummary(audit: any) {
     setSummaryLoading(true);
     try {
+      console.log("Groq key exists:", !!import.meta.env.VITE_GROQ_KEY);
       const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
         method: "POST",
         headers: {
