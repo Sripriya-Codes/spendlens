@@ -25,12 +25,12 @@ graph TD
 
 ## Stack Choices
 
-- **React + Vite** — fast dev, simple SPA, no SSR needed
-- **TypeScript** — catches bugs at compile time, preferred by assignment
-- **Tailwind CSS v3** — utility-first, no design system overhead
-- **Groq (llama-3.3-70b)** — fast, free tier, good quality for short summaries
-- **Neon Postgres** — serverless Postgres, free tier, no connection pool needed
-- **Vercel** — zero config deploy, environment variable support
+- **React + Vite** - fast dev, simple SPA, no SSR needed
+- **TypeScript** - catches bugs at compile time, preferred by assignment
+- **Tailwind CSS v3** - utility-first, no design system overhead
+- **Groq (llama-3.3-70b)** - fast, free tier, good quality for short summaries
+- **Neon Postgres** - serverless Postgres, free tier, no connection pool needed
+- **Vercel** - zero config deploy, environment variable support
 
 ## Scaling to 10k audits/day
 
@@ -41,5 +41,5 @@ graph TD
 
 ## Known Limitations
 
-- Transactional email (Resend) not implemented — requires a server-side API route to avoid exposing the API key in the browser bundle. Would be a 2-hour addition with a Vercel serverless function.
-- Audit share URLs load from sessionStorage — works for same-browser sharing. Full cross-device sharing requires loading audit data from Neon by ID on the Result page.
+- Transactional email (Resend) not implemented - requires a server-side API route to avoid exposing the API key in the browser bundle. Would be a 2-hour addition with a Vercel serverless function.
+- Audit share URLs load from sessionStorage - works for same-browser sharing. Full cross-device sharing requires loading audit data from Neon by ID on the Result page.
